@@ -1,0 +1,1467 @@
+<head>
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        a {
+            color: #FFF;
+        }
+
+        a:hover {
+            color: #d338ae;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 22px;
+            color: #d338ae;
+            margin: 0;
+        }
+
+        .input-field {
+            text-transform: uppercase;
+            height: 35px;
+            border: solid 2px #FFF;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 15px;
+            padding: 20px;
+            width: 250px;
+            background-color: transparent;
+            color: #FFF;
+        }
+
+        .input-field::placeholder {
+            color: #EAD1DC;
+        }
+
+        .button {
+            width: inherit;
+            height: 35px;
+            padding-top: 10px;
+            padding-bottom: 28px;
+            background-color: transparent;
+            border: solid 2px #FFF;
+            color: #FFF;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        .button:hover {
+            background-color: #FFF;
+            color: #9128C4;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+
+        .input-field::placeholder {
+            text-transform: none;
+            font-size: 14px
+        }
+
+        .input-form {
+            width: 250px;
+            border: solid 1px transparent;
+            height: 35px;
+            text-align: left;
+            font-size: 15px;
+            text-transform: capitalize;
+            border-radius: 15px;
+            color: #31145B;
+            padding-left: 20px;
+        }
+
+        .full-address-container {
+            width: 80%;
+            background-image: url("https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/background-pink-1.png");
+            background-position: center;
+            background-size: cover;
+            height: auto;
+            padding: 30px;
+            text-align: middle;
+            border-radius: 30px;
+            box-shadow: 1px 2px 8px 0px #403a48;
+            color: #fff;
+            margin-bottom: 100px;
+        }
+
+        .address-inner {
+            width: 250px;
+            background-color: transparent;
+            text-align: left;
+        }
+
+        #productdesc h4 {
+            color: #31145B;
+        }
+
+        .postcode {
+            text-transform: uppercase;
+        }
+
+        .select-field {
+            width: 250px;
+            height: 35px;
+            text-align: left;
+            font-size: 15px;
+            border-radius: 15px;
+            border: none;
+            padding-left: 20px;
+        }
+
+        .product-hidden {
+            display: none;
+        }
+
+        table tr td {
+            font-size: 15px;
+            border: none;
+            vertical-align: top;
+        }
+
+        .cover-row {
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            color: white;
+            margin-bottom: 3px;
+            border-bottom: solid 1px #da62c0;
+            cursor: help;
+
+        }
+
+        .cover-row:hover {
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hidden-fa {
+            display: none;
+        }
+
+        input[type=checkbox] {
+            background-color: transparent;
+            border-radius: 50px;
+            transform: scale(2);
+            border: solid 1px #FFF;
+
+        }
+
+        input[type=checkbox]:checked {
+            background-color: #FFF;
+        }
+
+        input[type=checkbox]:checked:before {
+            content: url("https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/check-selector-4.png");
+            transform: scale(.12);
+            margin: -0.3875rem 0 0 -0.35rem;
+            height: 10px;
+            width: 5px;
+        }
+
+        .selector-row {
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            padding: 10px;
+            border-bottom: solid 1px #da62c0;
+            margin-bottom: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 5px 0px 15px 0px;
+        }
+
+        .selector-row:hover {
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+
+
+        .summary-window {
+            width: 100%;
+            min-height: 216px;
+            height: auto;
+            background-color: #FFF;
+            border-radius: 30px;
+            text-align: center;
+            border: none;
+            box-shadow: 1px 2px 8px 0px #403a48;
+        }
+
+        .summary-inner-head {
+            height: 70px;
+            width: 100%;
+            background-image: url("https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/background-pink-1.png");
+            background-position: center;
+            background-size: cover;
+            border-radius: 28px 28px 0px 0px;
+            padding-top: 20px;
+            color: white;
+        }
+
+        .summary-inner-body {
+            text-align: center;
+            padding-bottom: 1px;
+        }
+
+        .progress-bar {
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            list-style-type: none;
+            margin-top: 2px;
+        }
+
+        body {
+            counter-reset: step;
+        }
+
+        .progress-bar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 20px;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            color: #333;
+            background: white;
+            border-radius: 4px;
+            margin: 0 auto 5px auto;
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .progress-bar li.active:before,
+        .progress-bar li.active:after {
+            background: #9128C4;
+            color: white;
+            z-index: 10;
+        }
+
+        .bar {
+            margin-left: 70px;
+            margin-top: 10px;
+            width: 75%;
+            height: 3px;
+            background-color: #FFF;
+            margin-top: 14px;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .bar2 {
+            margin-left: 70px;
+            margin-top: 10px;
+            width: 1%;
+            height: 3px;
+            background-color: #9128C4;
+            margin-top: 14px;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .bar-container {
+            width: 91%;
+            height: 80px;
+            text-align: center;
+            border-radius: 35px;
+            margin-bottom: 40px;
+            margin-left: 25px;
+            padding-top: 10px;
+            background-image: url("https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/progress-bar-background-1.png");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .side-summary {
+            border: none;
+
+        }
+
+        .side-summary tr {
+            font-size: 10px;
+            text-align: center;
+            display: none;
+
+        }
+
+        .side-summary tr td {
+            vertical-align: middle;
+            font-size: 13px;
+        }
+
+        /*
+    .lock:after {
+        content: url("https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/lock-icon.png");
+    }*/
+    </style>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> Comment by Juan -->
+
+</head>
+
+<body>
+
+    <table style="border:none;">
+        <tr>
+            <td colspan="2">
+                <div class="bar-container" id="bar-container" style="display:none;">
+                    <div class="bar"></div>
+                    <div class="bar2" id="bar2"></div>
+                    <ul class="progress-bar">
+                        <li class="active">Address</li>
+                        <li id="bar-products">Products</li>
+                        <li id="bar-personaldetails">Personal details</li>
+                        <li id="bar-summary">Summary</li>
+                        <li id="bar-bankdetails">Bank details</li>
+                        <li id="bar-done">Done</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="td-summary" style="width:0%;padding-left:30px">
+                <div class="summary-window" id="summary-window" style="display:none;">
+                    <div class="summary-inner-head">
+                        <h3>Summary</h3>
+                    </div>
+                    <div class="summary-inner-body">
+                        <table class="side-summary" id="side-summary">
+                            <tr id="ss-1">
+                                <td style="width:50%">Postcode</td>
+                                <td style="width:50%"><span id="ss-pc"></span></td>
+                            </tr>
+                            <tr id="ss-2">
+                                <td>Door number</td>
+                                <td><span id="ss-dn"></span></td>
+                            </tr>
+                            <tr id="ss-3">
+                                <td>Address line 1</td>
+                                <td><span id="ss-ad1"></span></td>
+                            </tr>
+                            <tr id="ss-4">
+                                <td>Address line 2</td>
+                                <td><span id="ss-ad2"></span></td>
+                            </tr>
+                            <tr id="ss-5">
+                                <td>City</td>
+                                <td><span id="ss-cy"></span></td>
+                            </tr>
+                            <tr id="ss-6">
+                                <td>Product</td>
+                                <td><span id="ss-prd"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </td>
+            <!-- step 1 -->
+            <td id="main-app" style="width:100%; padding:0px 150px 0px 150px">
+                <center>
+                    <div id="postcode-container" class="full-address-container">
+                        <label for="postcode">Please enter the customer's postcode</label>
+                        <input id="postcode" class="input-field" maxlength="8" placeholder="Insert postcode"></input>
+                        <br>
+                        <br>
+                        <br>
+                        <a class="button" href="#" onclick="myFunction();">Let's get started!</a>
+
+                    </div>
+
+                    <!-- step 2 -->
+
+
+
+                    <div id="full-address-container" style="display:none;" class="full-address-container">
+                        Please enter customer's full address<br><br>
+                        <div class="address-inner">
+                            <label for="form-doornumber">Door number*</label>
+                            <input class="input-form" id="form-doornumber"></input>
+                            <br><br>
+                            <label for="form-addline1">Address Line 1*</label>
+                            <input class="input-form" id="form-addline1"></input>
+                            <br><br>
+                            <label for="form-addline2">Address line 2 (optional)</label>
+                            <input class="input-form" id="form-addline2"></input>
+                            <br><br>
+                            <label for="form-city">City*</label>
+                            <input class="input-form" id="form-city"></input>
+                            <br><br>
+                            <label for="form-postcode">Postcode*</label>
+                            <input class="input-form postcode" id="form-postcode" disabled="disabled"></input><br>
+                            <i style="font-size:12px">*Mandatory fields</i>
+                            <br>
+                            <br><br>
+                            <a href="#" id="go-back-to-postcode" onclick="go_back_to_postcode()">Go back</a>
+                            <br><br><br>
+                            <a href="#" class="button" onclick="progress2()">Continue</a>
+                            <br><br>
+                            <span style="font-size:15px;color:orange;display:none;" id="error-add">Please ensure all
+                                mandatory fields are filled in before you continue to the next step</span>
+                        </div>
+                    </div>
+
+
+                    <!-- step 3 -->
+
+                    <div class="full-address-container" id="product-cat" style="display:none;">
+                        Let's find out about the customer's profile<br><br>
+                        <div class="address-inner" id="product-cat-inner">
+                            <label for="form-ownerstatus">What is the customer's homeowner status?*</label>
+                            <select class="select-field" id="form-ownerstatus" onchange="testChange()">
+                                <option id="blank-owner">&nbsp;</option>
+                                <option id="homeowner">Homeowner</option>
+                                <option id="landlord">Landlord</option>
+                                <option id="tenant">Tenant</option>
+                            </select>
+                        </div>
+                        <br><br>
+
+                        <span id="company-photo"></span>
+                        <span id="productdesc" onchange="aps_calc()"></span><br>
+                        <a href="#" id="go-back-to-address" onclick="go_back_to_address(); progress1()">Go back</a>
+
+                    </div>
+
+                    <!-- if boiler -->
+                    <div class="full-address-container" id="boiler-info" style="display:none;">
+
+                        <h3>You have chosen</h3>
+                        <span id="chosen-boiler"></span>
+                        <br><br>
+                        <label for="boiler-age" id="error">How old is the customer's boiler?</label>
+                        <select class="select-field" id="boiler-age">
+                            <option id="blank-age">&nbsp;</option>
+                            <option id="1-5">1-5 years</option>
+                            <option id="6-10">6-10 years</option>
+                            <option id="11-15">11-15 years</option>
+                            <option id="15+">15+ years</option>
+                        </select>
+                        <br><br><br>
+                        <label for="boiler-power" id="error">How is the customers boiler powered?*</label>
+                        <select class="select-field" id="boiler-power" onchange="bp_error()">
+                            <option id="blank-power">&nbsp;</option>
+                            <option id="Gas">Gas</option>
+                            <option id="LPG">LPG</option>
+                            <option id="other-power">Other</option>
+                        </select>
+                        <br>
+                        <i style="font-size:12px">*Mandatory fields</i>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#" id="go-back-to-product-cat" onclick="go_back_to_product_cat(); progress2()">Go
+                            back</a>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#" class="button" onclick="progress3()" id="bi_c">Continue</a>
+                        <span style="color:orange;display:none" id="bp-error">Unfortunately, we do not cover any other
+                            boiler power type than gas and LPG at this time. Please offer customer APS products.</span>
+                        <span style="font-size:15px;color:orange;display:none;" id="error-prd">Please ensure all
+                            mandatory fields are filled in before you continue to the next step</span>
+
+                    </div>
+
+                    <!-- Customer profile -->
+
+                    <div class="full-address-container" id="customer-profile" style="display:none;">
+                        Please enter the customer's personal information<br><br>
+                        <div class="address-inner">
+                            <label for="form-first-name" id="error">First name*</label>
+                            <input class="input-form" id="form-first-name">
+                            <br><br>
+                            <label for="form-last-name">Last name*</label>
+                            <input class="input-form" id="form-last-name">
+                            <br><br>
+                            <label for="form-email-address">Email address</label>
+                            <input class="input-form" style="text-transform:none;" id="form-email-address">
+                            <br><br>
+                            <label for="form-phone-number">Phone number*</label>
+                            <input type="number" class="input-form" id="form-phone-number">
+                            <i style="font-size:12px">*Mandatory fields</i>
+                            <br><br>
+                            <a href="#" id="go-back-to-product-cat-again"
+                                onclick="go_back_to_product_cat(); progress2()">Go back</a>
+                            <br><br><br>
+                            <a href="#" class="button"
+                                onclick="pre_bank_summary(); product_details(); progress4()">Continue</a>
+                            <br>
+                            <span style="font-size:15px;color:orange;display:none;" id="error-pi">Please ensure all
+                                mandatory fields are filled in before you continue to the next step</span>
+                        </div>
+                    </div>
+                    <!-- pre-bank-summary -->
+
+                    <div class="full-address-container" id="pre-bank-summary" style="display:none;">
+                        <h3>Summary</h3>
+
+                        <table style="border:none;text-align:center">
+                            <tr>
+                                <td style="width:50%">
+                                    Full name
+                                </td>
+                                <td style="width:50%">
+                                    <span id="summary-fullname"></span>
+                                </td>
+                            </tr>
+                            <tr style="display:none">
+                                <td>
+                                    First name
+                                </td>
+                                <td>
+                                    <span id="summary-firstname"></span>
+                                </td>
+                            </tr>
+                            <tr style="display:none">
+                                <td>
+                                    Last name
+                                </td>
+                                <td>
+                                    <span id="summary-lastname"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Phone number
+                                </td>
+                                <td>
+                                    <span id="summary-phone"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email address
+                                </td>
+                                <td>
+                                    <span id="summary-email"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Door number
+                                </td>
+                                <td>
+                                    <span id="summary-doorno"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Address line 1
+                                </td>
+                                <td>
+                                    <span id="summary-add1"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Address line 2
+                                </td>
+                                <td>
+                                    <span id="summary-add2"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    City
+                                </td>
+                                <td>
+                                    <span id="summary-city"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Postcode
+                                </td>
+                                <td>
+                                    <span id="summary-postcode"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr style="display:none">
+                                <td>
+                                    Zoho product
+                                </td>
+                                <td>
+                                    <span id="summary-zohoprod"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    New provider
+                                </td>
+                                <td>
+                                    <span id="summary-provider"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Chosen product
+                                </td>
+                                <td>
+                                    <span id="summary-product"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Monthly price
+                                </td>
+                                <td>
+                                    <span id="summary-price"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifboiler1" style="display:none;">
+                                <td>
+                                    Age of boiler
+                                </td>
+                                <td>
+                                    <span id="summary-boilerage"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifboiler2" style="display:none;">
+                                <td>
+                                    Boiler power type
+                                </td>
+                                <td>
+                                    <span id="summary-boilerpower"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps1" style="display:none;">
+                                <td>
+                                    Appliance covered #1
+                                </td>
+                                <td>
+                                    <span id="summary-aps1"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps2" style="display:none;">
+                                <td>
+                                    Appliance covered #2
+                                </td>
+                                <td>
+                                    <span id="summary-aps2"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps3" style="display:none;">
+                                <td>
+                                    Appliance covered #3
+                                </td>
+                                <td>
+                                    <span id="summary-aps3"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps4" style="display:none;">
+                                <td>
+                                    Appliance covered #4
+                                </td>
+                                <td>
+                                    <span id="summary-aps4"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps5" style="display:none;">
+                                <td>
+                                    Appliance covered #5
+                                </td>
+                                <td>
+                                    <span id="summary-aps5"></span>
+                                </td>
+                            </tr>
+                            <tr id="summary-ifaps6" style="display:none;">
+                                <td>
+                                    Appliance covered #6
+                                </td>
+                                <td>
+                                    <span id="summary-aps6"></span>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <a href="#" id="back-to-personal" onclick="progress3(); progress3_APS()">Go back</a>
+                        <br>
+                        <br>
+                        <form id="myForm">
+                            <button type="submit" class="button" onclick="go_to_bd(); progress5();">Everything is
+                                correct</button>
+                        </form>
+                    </div>
+
+                    <!-- bank details -->
+
+                    <div class="full-address-container" id="bank-details" style="display:none;">
+                        <h3 class="lock"> Set up the direct debit</h3>
+                        <br><br>
+                        <div class="address-inner">
+                            <label for="form-account-holder">Account holder*</label>
+                            <input class="input-form" id="form-account-holder">
+                            <br><br>
+                            <label for="form-acc-no">Account number*</label>
+                            <input class="input-form" id="form-acc-no" placeholder="XXXX XXXX">
+                            <br><br>
+                            <label for="form-sort-code">Sort code*</label>
+                            <input class="input-form" id="form-sort-code" placeholder="XX-XX-XX">
+                            <br>
+                            <i style="font-size:12px">*Mandatory fields</i>
+                            <br>
+                            <br>
+                            <br>
+                            <a href="#" id="back-to-summary" onclick="progress4();">Go back</a>
+                            <br><br>
+                            <a href="#" class="button" onclick="progress6()">Submit</a>
+                            <br>
+                            <span style="font-size:15px;color:orange;display:none;" id="error-bd">Please ensure all
+                                mandatory fields are filled in before you continue to the next step</span>
+                        </div>
+                    </div>
+
+                    <!-- Confirmation -->
+
+                    <div class="full-address-container" id="confirmation-done"
+                        style="display:none; padding:0;border:none;">
+                        <div class="address-inner" style="width:70%;text-align:center;padding-top:30px">
+                            <h3>Sign up successful</h3>
+                            <br>
+                            <p>All data has now been submitted successfully.</p>
+                            <br>
+
+                            • Zoho contact has now been updated with new deal
+                            <br><br>
+                            • Customer has been sent welcome pack & Trustpilot text request (if applicable)
+                            <br><br>
+                            <a href="" class="button" onclick="location.reload();">Start new sale</a>
+                            <br>
+                            <br><br>
+
+
+                        </div>
+
+
+
+                        <!-- company images -->
+
+                        <div class="product-hidden" id="photo-tbc">
+                            <img src="https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/the-boiler-company-logo.png"
+                                style="max-width:50%">
+                        </div>
+
+                        <div class="product-hidden" id="photo-aps">
+                            <img src="https://sales-portal.utilityswitchboard.com/wp-content/uploads/2020/12/aps-logo.png"
+                                style="max-width:50%">
+                        </div>
+
+
+
+
+                        <!--product descriptions -->
+                        <div class="product-hidden" id="products-tbc">
+                            <table style="border:none">
+                                <tr>
+                                    <td style="width:50%">
+                                        <!-- The Boiler Company - Basic Service -->
+                                        <center>
+                                            <h3>Basic Service</h3><br>
+                                            <h4>£12.50 per month</h4>
+                                            <b>£0 excess</b><br><br>
+                                            What's included?<br><br>
+                                            <div class="cover-row"><i class="fas fa-angle-right hidden-fa"></i> Boilers
+                                                & controls</div>
+                                            <div class="cover-row"><i class="fas fa-angle-right hidden-fa"></i>
+                                                Unlimited call outs</div>
+                                            <div class="cover-row"><i class="fas fa-angle-right hidden-fa"></i> No call
+                                                out charges</div>
+                                            <div class="cover-row">Labour invovled in repairs</div>
+                                            <div class="cover-row">Parts involved in repairs</div>
+                                            <div class="cover-row">Central heating system</div>
+                                            <div class="cover-row">Internal plumbing</div>
+                                        </center>
+                                    </td>
+
+                                    <!-- The Boiler Company - Plus Service -->
+                                    <td style="width:50%">
+                                        <center>
+                                            <h3>Plus Service</h3><br>
+                                            <h4>£16.50 per month</h4>
+                                            <b>£0 excess</b><br><br>
+                                            What's included?<br><br>
+                                            <div class="cover-row">Annual boiler service</div>
+                                            <div class="cover-row">Boilers & controls</div>
+                                            <div class="cover-row">Unlimited call outs</div>
+                                            <div class="cover-row">No call out charges</div>
+                                            <div class="cover-row">Labour invovled in repairs</div>
+                                            <div class="cover-row">Parts involved in repairs</div>
+                                            <div class="cover-row">Central heating system</div>
+                                            <div class="cover-row">Internal plumbing</div>
+                                        </center>
+                                        <br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="button" style="width:100%"
+                                            onclick="load_boiler_info() ; su_bs(); progress2_5()">Sign up</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="button" style="width:100%"
+                                            onclick="su_ps(); load_boiler_info(); progress2_5()">Sign up</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Appliance Sure - Multi-select -->
+
+                        <div class="product-hidden" id="products-aps">
+                            <br><br>
+                            <h4 style="color:#fff">£<span id="aps-cost">0</span> per month</h4>
+                            <br>
+                            <i style="color:#31145B">Choose the appliances that the customer would like to
+                                cover:</i><br><br>
+                            <label sytle="cursor:pointer;">
+                                <div class="selector-row"><input type="checkbox" id="washing-machine"
+                                        value="Washing Machine">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Washing Machine
+                            </label>
+                        </div>
+                        <label sytle="cursor:pointer;">
+                            <div class="selector-row"><input type="checkbox" id="dishwasher"
+                                    value="Dishwasher">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dishwasher</div>
+                        </label>
+                        <label sytle="cursor:pointer;">
+                            <div class="selector-row"><input type="checkbox" id="fridge"
+                                    value="Fridge">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fridge</div>
+                        </label>
+                        <label sytle="cursor:pointer;">
+                            <div class="selector-row"><input type="checkbox" id="freezer"
+                                    value="Freezer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Freezer</div>
+                        </label>
+                        <label sytle="cursor:pointer;">
+                            <div class="selector-row"><input type="checkbox" id="fridge-freezer"
+                                    value="Fridge-Freezer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fridge-freezer</div>
+                        </label>
+                        <label sytle="cursor:pointer;">
+                            <div class="selector-row"><input type="checkbox" id="tumble-dryer"
+                                    value="Tumble Dryer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tumble Dryer</div>
+                        </label>
+
+                        <br>
+                        <br>
+                        <a href="#" class="button" style="width:100%" onclick="su_aps(); progress3_APS()">Sign up</a>
+                        <br>
+                        <span style="font-size:15px;color:orange;display:none;" id="error-aps">Please select at least
+                            one appliance for cover before you continue to the next step</span>
+
+                    </div>
+                    <br>
+                    <br>
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    function myFunction() {
+        if (navigator.userAgent.indexOf("Chrome") > 0) {
+            if (document.getElementById("postcode").value.length >= 5) {
+                document.getElementById("postcode-container").style.display = "none";
+                document.getElementById("full-address-container").style.display = "block";
+                document.getElementById("form-postcode").value = document.getElementById("postcode").value;
+            } else {
+                alert("Please enter a valid UK postcode");
+            }
+        } else {
+            alert("This tool is exclusively available through Google Chrome. Please use Google Chrome in order to proceed with your sale");
+        }
+    }
+
+    function go_back_to_postcode() {
+        document.getElementById("postcode-container").style.display = "block";
+        document.getElementById("full-address-container").style.display = "none";
+        // Added by Juan
+        document.getElementById("aps-cost").value = '';
+        document.getElementById('summary-price').value = '';
+    }
+
+
+    function testChange() {
+
+        var tbc_pr = document.getElementById("products-tbc").innerHTML;
+        var tbc_ph = document.getElementById("photo-tbc").innerHTML;
+        var aps_pr = document.getElementById("products-aps").innerHTML;
+        var aps_ph = document.getElementById("photo-aps").innerHTML;
+
+
+        if (document.getElementById("form-ownerstatus").selectedIndex == 1) {
+            document.getElementById("productdesc").innerHTML = tbc_pr;
+            document.getElementById("company-photo").innerHTML = tbc_ph;
+        } else if (document.getElementById("form-ownerstatus").selectedIndex == 2) {
+            document.getElementById("productdesc").innerHTML = "Coming soon";
+            document.getElementById("company-photo").innerHTML = "";
+        } else if (document.getElementById("form-ownerstatus").selectedIndex == 3) {
+            document.getElementById("productdesc").innerHTML = aps_pr;
+            document.getElementById("company-photo").innerHTML = aps_ph;
+        } else {
+            document.getElementById("productdesc").innerHTML = "";
+            document.getElementById("company-photo").innerHTML = "";
+        }
+    }
+
+
+    function aps_calc() {
+
+        if (document.querySelectorAll('input[type=checkbox]:checked').length == 1) {
+            document.getElementById("aps-cost").innerHTML = "6.50";
+            document.getElementById("aps-cost").value = "6.50"; // Added by Juan
+        } else if (document.querySelectorAll('input[type=checkbox]:checked').length == 2) {
+            document.getElementById("aps-cost").innerHTML = "10.50";
+            document.getElementById("aps-cost").value = "10.50"; // Added by Juan
+        } else if (document.querySelectorAll('input[type=checkbox]:checked').length == 3) {
+            document.getElementById("aps-cost").innerHTML = "13.50";
+            document.getElementById("aps-cost").value = "13.50"; //Added by Juan
+        } else if (document.querySelectorAll('input[type=checkbox]:checked').length == 4) {
+            document.getElementById("aps-cost").innerHTML = "16.50";
+            document.getElementById("aps-cost").value = "16.50"; // Added by Juan
+        } else if (document.querySelectorAll('input[type=checkbox]:checked').length == 5) {
+            document.getElementById("aps-cost").innerHTML = "19.50";
+            document.getElementById("aps-cost").value = "19.50"; //Added by Juan
+        } else if (document.querySelectorAll('input[type=checkbox]:checked').length == 6) {
+            document.getElementById("aps-cost").innerHTML = "22.50";
+            document.getElementById("aps-cost").value = "22.50"; //Added by Juan
+        } else {
+            document.getElementById("aps-cost").innerHTML = 0;
+            document.getElementById("aps-cost").value = 0; //Added by Juan
+        }
+    }
+
+    function go_back_to_address() {
+        document.getElementById("full-address-container").style.display = "block";
+        document.getElementById("product-cat").style.display = "none";
+        // Added by Juan
+        document.getElementById("aps-cost").value = '';
+        document.getElementById('summary-price').value = '';
+    }
+
+    function load_boiler_info() {
+        document.getElementById("boiler-info").style.display = "block";
+        document.getElementById("product-cat").style.display = "none";
+    }
+
+    function su_bs() {
+        document.getElementById("chosen-boiler").innerHTML = "The Boiler Company - Basic Service (£12.50)"
+    }
+
+    function su_ps() {
+        document.getElementById("chosen-boiler").innerHTML = "The Boiler Company - Plus Service (£16.50)"
+    }
+
+    function su_aps() {
+        document.getElementById("chosen-boiler").innerHTML = "Appliance Sure - " + document.querySelectorAll('input[type=checkbox]:checked').length + " Appliances (£" + document.getElementById("aps-cost").innerHTML + ")";
+
+    }
+
+    function bp_error() {
+        if (document.getElementById("boiler-power").selectedIndex == 3) {
+            document.getElementById("bp-error").style.display = "block";
+            document.getElementById("bi_c").style.display = "none";
+        } else {
+            document.getElementById("bp-error").style.display = "none";
+            document.getElementById("bi_c").style.display = "block";
+        }
+    }
+
+    function go_back_to_product_cat() {
+        document.getElementById("boiler-info").style.display = "none";
+        document.getElementById("customer-profile").style.display = "none";
+        document.getElementById("product-cat").style.display = "block";
+        // Added by Juan
+        document.getElementById("aps-cost").value = '';
+        document.getElementById('summary-price').value = '';
+    }
+
+    function pre_bank_summary() {
+        var f_fn = document.getElementById("form-first-name");
+        var f_ln = document.getElementById("form-last-name");
+        var f_pn = document.getElementById("form-phone-number");
+        var f_err = document.getElementById("error-pi");
+        var f_fn_txt = f_fn.value;
+        var f_ln_txt = f_ln.value;
+        if (f_fn.value.length <= 1 || f_ln.value.length <= 1 || f_pn.value.length <= 1) {
+            f_err.style.display = "block";
+        } else {
+            f_err.style.display = "none";
+            document.getElementById("pre-bank-summary").style.display = "block";
+            document.getElementById("customer-profile").style.display = "none";
+            document.getElementById("summary-fullname").innerHTML = f_fn_txt.concat(" ", f_ln_txt);
+            document.getElementById("summary-firstname").innerHTML = document.getElementById("form-first-name").value;
+            document.getElementById("summary-lastname").innerHTML = document.getElementById("form-last-name").value;
+            document.getElementById("summary-phone").innerHTML = document.getElementById("form-phone-number").value;
+            document.getElementById("summary-email").innerHTML = document.getElementById("form-email-address").value;
+            document.getElementById("summary-doorno").innerHTML = document.getElementById("form-doornumber").value;
+            document.getElementById("summary-add1").innerHTML = document.getElementById("form-addline1").value;
+            document.getElementById("summary-add2").innerHTML = document.getElementById("form-addline2").value;
+            document.getElementById("summary-city").innerHTML = document.getElementById("form-city").value;
+            document.getElementById("summary-postcode").innerHTML = document.getElementById("form-postcode").value;
+
+            document.getElementById("summary-zohoprod").innerHTML = document.getElementById("chosen-boiler").innerHTML;
+            document.getElementById("summary-boilerage").innerHTML = document.getElementById("boiler-age").value;
+            document.getElementById("summary-boilerpower").innerHTML = document.getElementById("boiler-power").value;
+
+        }
+    }
+
+    function product_details() {
+        var product = document.getElementById("chosen-boiler").innerHTML;
+        var tbc_1 = document.getElementById("summary-ifboiler1");
+        var tbc_2 = document.getElementById("summary-ifboiler2");
+        var aps_1 = document.getElementById("summary-ifaps1");
+        var aps_2 = document.getElementById("summary-ifaps2");
+        var aps_3 = document.getElementById("summary-ifaps3");
+        var aps_4 = document.getElementById("summary-ifaps4");
+        var aps_5 = document.getElementById("summary-ifaps5");
+        var aps_6 = document.getElementById("summary-ifaps6");
+
+        if (product.includes("Boiler")) {
+            document.getElementById("summary-provider").innerHTML = "The Boiler Company";
+            document.getElementById("summary-provider").value = "The Boiler Company"; //Added by Juan
+            tbc_1.style.display = "table-row";
+            tbc_2.style.display = "table-row";
+            document.getElementById("summary-aps1").innerHTML = "";
+            document.getElementById("summary-aps2").innerHTML = "";
+            document.getElementById("summary-aps3").innerHTML = "";
+            document.getElementById("summary-aps4").innerHTML = "";
+            document.getElementById("summary-aps5").innerHTML = "";
+            document.getElementById("summary-aps6").innerHTML = "";
+
+        } else if (product.includes("Appliance")) {
+            document.getElementById("summary-provider").innerHTML = "Appliance Sure";
+            document.getElementById("summary-provider").value = "Appliance Sure"; //Added by Juan
+        }
+
+        if (product.includes("Basic")) {
+            document.getElementById("summary-product").innerHTML = "Basic Service"
+            document.getElementById("summary-product").value = "Basic Service" //Added by Juan
+        } else if (product.includes("Plus")) {
+            document.getElementById("summary-product").innerHTML = "Plus Service"
+            document.getElementById("summary-product").value = "Plus Service" //Added by Juan
+        } else if (product.includes("Appliance")) {
+            // document.getElementById("summary-product").innerHTML = document.querySelectorAll('input[type=checkbox]:checked').length + " Appliances"; ---- ORIGINAL ----
+            const sumappliancer = document.getElementById("summary-product").innerHTML = document.querySelectorAll('input[type=checkbox]:checked').length + " Appliances";
+            document.getElementById("summary-product").value = sumappliancer; // Added by Juan
+        }
+
+        if (product.includes("Basic")) {
+            document.getElementById("summary-price").innerHTML = "£12.50";
+            document.getElementById("summary-price").value = "12.50"; //Added by Juan --Here
+        } else if (product.includes("Plus")) {
+            document.getElementById("summary-price").innerHTML = "£16.50";
+            document.getElementById("summary-price").value = "16.50" // Added by Juan
+        } else if (product.includes("Appliance")) {
+            document.getElementById("summary-price").innerHTML = "£" + document.getElementById("aps-cost").innerHTML;
+        }
+
+        if (product.includes("Sure - 1")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked:nth-child(1)').val();
+            document.getElementById("summary-aps2").innerHTML = "";
+            document.getElementById("summary-aps3").innerHTML = "";
+            document.getElementById("summary-aps4").innerHTML = "";
+            document.getElementById("summary-aps5").innerHTML = "";
+            document.getElementById("summary-aps6").innerHTML = "";
+        } else if (product.includes("Sure - 2")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked').eq(0).val();
+            document.getElementById("summary-aps2").innerHTML = $('[type="checkbox"]:checked').eq(1).val();
+            document.getElementById("summary-aps3").innerHTML = "";
+            document.getElementById("summary-aps4").innerHTML = "";
+            document.getElementById("summary-aps5").innerHTML = "";
+            document.getElementById("summary-aps6").innerHTML = "";
+        } else if (product.includes("Sure - 3")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked').eq(0).val();
+            document.getElementById("summary-aps2").innerHTML = $('[type="checkbox"]:checked').eq(1).val();
+            document.getElementById("summary-aps3").innerHTML = $('[type="checkbox"]:checked').eq(2).val();
+            document.getElementById("summary-aps4").innerHTML = "";
+            document.getElementById("summary-aps5").innerHTML = "";
+            document.getElementById("summary-aps6").innerHTML = "";
+        } else if (product.includes("Sure - 4")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked').eq(0).val();
+            document.getElementById("summary-aps2").innerHTML = $('[type="checkbox"]:checked').eq(1).val();
+            document.getElementById("summary-aps3").innerHTML = $('[type="checkbox"]:checked').eq(2).val();
+            document.getElementById("summary-aps4").innerHTML = $('[type="checkbox"]:checked').eq(3).val();
+            document.getElementById("summary-aps5").innerHTML = "";
+            document.getElementById("summary-aps6").innerHTML = "";
+        } else if (product.includes("Sure - 5")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked').eq(0).val();
+            document.getElementById("summary-aps2").innerHTML = $('[type="checkbox"]:checked').eq(1).val();
+            document.getElementById("summary-aps3").innerHTML = $('[type="checkbox"]:checked').eq(2).val();
+            document.getElementById("summary-aps4").innerHTML = $('[type="checkbox"]:checked').eq(3).val();
+            document.getElementById("summary-aps5").innerHTML = $('[type="checkbox"]:checked').eq(4).val();
+            document.getElementById("summary-aps6").innerHTML = "";
+        } else if (product.includes("Sure - 6")) {
+            document.getElementById("summary-aps1").innerHTML = $('[type="checkbox"]:checked').eq(0).val();
+            document.getElementById("summary-aps2").innerHTML = $('[type="checkbox"]:checked').eq(1).val();
+            document.getElementById("summary-aps3").innerHTML = $('[type="checkbox"]:checked').eq(2).val();
+            document.getElementById("summary-aps4").innerHTML = $('[type="checkbox"]:checked').eq(3).val();
+            document.getElementById("summary-aps5").innerHTML = $('[type="checkbox"]:checked').eq(4).val();
+            document.getElementById("summary-aps6").innerHTML = $('[type="checkbox"]:checked').eq(5).val();
+        }
+
+
+
+        if (document.getElementById("summary-aps1").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps1").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps1").style.display = "none"
+        }
+
+        if (document.getElementById("summary-aps2").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps2").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps2").style.display = "none"
+        }
+
+        if (document.getElementById("summary-aps3").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps3").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps3").style.display = "none"
+        }
+
+        if (document.getElementById("summary-aps4").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps4").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps4").style.display = "none"
+        }
+
+        if (document.getElementById("summary-aps5").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps5").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps5").style.display = "none"
+        }
+
+        if (document.getElementById("summary-aps6").innerHTML.length > 0) {
+            document.getElementById("summary-ifaps6").style.display = "table-row"
+        } else {
+            document.getElementById("summary-ifaps6").style.display = "none"
+        }
+    }
+
+    function go_to_bd() {
+        document.getElementById("pre-bank-summary").style.display = "none";
+        document.getElementById("bank-details").style.display = "block";
+    }
+
+    function progress2() {
+        if (document.getElementById("form-doornumber").value.length < 1 || document.getElementById("form-addline1").value.length < 5 || document.getElementById("form-city").value.length < 2) {
+            document.getElementById("error-add").style.display = "block";
+        } else {
+            document.getElementById("full-address-container").style.display = "none";
+            document.getElementById("product-cat").style.display = "block";
+
+            document.getElementById("bar2").style.width = "14%";
+            document.getElementById("bar-products").classList.add('active');
+            document.getElementById("ss-1").style.display = "table-row";
+            document.getElementById("ss-pc").innerHTML = document.getElementById("form-postcode").value;
+            document.getElementById("ss-2").style.display = "table-row";
+            document.getElementById("ss-dn").innerHTML = document.getElementById("form-doornumber").value;
+            document.getElementById("ss-3").style.display = "table-row";
+            document.getElementById("ss-ad1").innerHTML = document.getElementById("form-addline1").value;
+            document.getElementById("ss-4").style.display = "table-row";
+            document.getElementById("ss-ad2").innerHTML = document.getElementById("form-addline2").value;
+            document.getElementById("ss-5").style.display = "table-row";
+            document.getElementById("ss-cy").innerHTML = document.getElementById("form-city").value;
+            document.getElementById("bar-container").style.display = "block";
+            document.getElementById("td-summary").style.width = "30%";
+            document.getElementById("summary-window").style.display = "block";
+            document.getElementById("main-app").style.width = "70%";
+            document.getElementById("main-app").style.padding = "0";
+            document.getElementById("ss-6").style.display = "none";
+            document.getElementById("bar-personaldetails").classList.remove('active');
+            document.getElementById("error-prd").style.display = "none";
+        }
+    }
+
+    function progress1() {
+
+        document.getElementById("error-add").style.display = "none";
+        document.getElementById("bar2").style.width = "1%";
+        document.getElementById("bar-products").classList.remove('active');
+
+        document.getElementById("ss-1").style.display = "none";
+        document.getElementById("ss-pc").innerHTML = document.getElementById("form-postcode").value;
+        document.getElementById("ss-2").style.display = "none";
+        document.getElementById("ss-dn").innerHTML = document.getElementById("form-doornumber").value;
+        document.getElementById("ss-3").style.display = "none";
+        document.getElementById("ss-ad1").innerHTML = document.getElementById("form-addline1").value;
+        document.getElementById("ss-4").style.display = "none";
+        document.getElementById("ss-ad2").innerHTML = document.getElementById("form-addline2").value;
+        document.getElementById("ss-5").style.display = "none";
+        document.getElementById("ss-cy").innerHTML = document.getElementById("form-city").value;
+        document.getElementById("bar-container").style.display = "none";
+        document.getElementById("td-summary").style.width = "0%";
+        document.getElementById("summary-window").style.display = "none";
+        document.getElementById("main-app").style.width = "100%";
+        document.getElementById("main-app").style.padding = "0px 150px 0px 150px";
+
+    }
+
+    function progress2_5() {
+        document.getElementById("ss-6").style.display = "table-row";
+        document.getElementById("ss-prd").innerHTML = document.getElementById("chosen-boiler").innerHTML;
+    }
+
+    function progress3() {
+        if (document.getElementById("boiler-power").selectedIndex == 0) {
+            document.getElementById("error-prd").style.display = "block";
+        }
+        else {
+            document.getElementById("bar2").style.width = "31%";
+            document.getElementById("bar-personaldetails").classList.add('active');
+            document.getElementById("bar-summary").classList.remove('active');
+            document.getElementById("pre-bank-summary").style.display = "none";
+            document.getElementById("customer-profile").style.display = "block";
+            document.getElementById("boiler-info").style.display = "none";
+            document.getElementById("customer-profile").style.display = "block";
+            document.getElementById("error-aps").style.display = "none"
+        }
+    }
+
+    function progress3_APS() {
+        if (document.querySelectorAll('input[type=checkbox]:checked').length == 0) {
+            document.getElementById("error-aps").style.display = "block";
+        }
+        else {
+            document.getElementById("bar2").style.width = "31%";
+            document.getElementById("bar-personaldetails").classList.add('active');
+            document.getElementById("bar-summary").classList.remove('active');
+            document.getElementById("pre-bank-summary").style.display = "none";
+            document.getElementById("customer-profile").style.display = "block";
+            document.getElementById("product-cat").style.display = "none";
+            document.getElementById("boiler-info").style.display = "none";
+            document.getElementById("customer-profile").style.display = "block";
+            document.getElementById("ss-6").style.display = "table-row";
+            document.getElementById("ss-prd").innerHTML = document.getElementById("chosen-boiler").innerHTML;
+        }
+    }
+
+    function progress4() {
+        var f_fn = document.getElementById("form-first-name");
+        var f_ln = document.getElementById("form-last-name");
+        var f_pn = document.getElementById("form-phone-number");
+        var f_err = document.getElementById("error-pi");
+        var f_fn_txt = f_fn.value;
+        var f_ln_txt = f_ln.value;
+        if (f_fn.value.length <= 1 || f_ln.value.length <= 1 || f_pn.value.length <= 1) {
+            f_err.style.display = "block";
+        } else {
+            document.getElementById("bar2").style.width = "47%";
+            document.getElementById("bar-summary").classList.add('active');
+            document.getElementById("td-summary").style.width = "0%";
+            document.getElementById("summary-window").style.display = "none";
+            document.getElementById("main-app").style.width = "100%";
+            document.getElementById("main-app").style.padding = "0px 150px 0px 150px";
+            document.getElementById("pre-bank-summary").style.display = "block";
+            document.getElementById("bank-details").style.display = "none";
+            document.getElementById("bar-bankdetails").classList.remove('active');
+        }
+    }
+
+    function progress5() {
+        document.getElementById("bar2").style.width = "61%";
+        document.getElementById("bar-bankdetails").classList.add('active');
+        document.getElementById("td-summary").style.width = "30%";
+        document.getElementById("summary-window").style.display = "block";
+        document.getElementById("main-app").style.width = "70%";
+        document.getElementById("main-app").style.padding = "0";
+
+        const fullname = document.getElementById('form-first-name').value + ' ' + document.getElementById('form-last-name').value;
+        const phone = document.getElementById('form-phone-number').value;
+        const email = document.getElementById('form-email-address').value;
+        const doornumber = document.getElementById('form-doornumber').value;
+        const addline1 = document.getElementById('form-addline1').value;
+        const addline2 = document.getElementById('form-addline2').value;
+        const city = document.getElementById('form-city').value;
+        const postcode = document.getElementById('form-postcode').value;
+        const provider = document.getElementById('summary-provider').value;
+        const product = document.getElementById('summary-product').value;
+        const summary_price = document.getElementById('summary-price').value;
+        const aps_cost = document.getElementById('aps-cost').value;
+
+        let appliance_1 = document.getElementById("washing-machine");
+        let appliance_2 = document.getElementById("dishwasher");
+        let appliance_3 = document.getElementById("fridge");
+        let appliance_4 = document.getElementById("freezer");
+        let appliance_5 = document.getElementById("fridge-freezer");
+        let appliance_6 = document.getElementById("tumble-dryer");
+
+        if (appliance_1.checked === false) {
+            appliance_1 = document.getElementById("washing-machine").value = "";
+        } else {
+            appliance_1 = document.getElementById("washing-machine").value = "Washing Machine";
+        }
+
+        if (appliance_2.checked === false) {
+            appliance_2 = document.getElementById("dishwasher").value = "";
+        } else {
+            appliance_2 = document.getElementById("dishwasher").value = "Dishwasher";
+        }
+
+        if (appliance_3.checked === false) {
+            appliance_3 = document.getElementById("fridge").value = "";
+        } else {
+            appliance_3 = document.getElementById("fridge").value = "Fridge";
+        }
+
+        if (appliance_4.checked === false) {
+            appliance_4 = document.getElementById("freezer").value = "";
+        } else {
+            appliance_4 = document.getElementById("freezer").value = "Freezer";
+        }
+
+        if (appliance_5.checked === false) {
+            appliance_5 = document.getElementById("fridge-freezer").value = "";
+        } else {
+            appliance_5 = document.getElementById("fridge-freezer").value = "Fridge-freezer";
+        }
+
+        if (appliance_6.checked === false) {
+            appliance_6 = document.getElementById("tumble-dryer").value = "";
+        } else {
+            appliance_6 = document.getElementById("tumble-dryer").value = "Tumble Dryer";
+        }
+
+        let data = {};
+
+        function customerData() {
+
+            if (aps_cost === undefined || aps_cost.length <= 0) {
+                data = {
+                    fullname,
+                    phone,
+                    email,
+                    doornumber,
+                    addline1,
+                    addline2,
+                    city,
+                    postcode,
+                    provider,
+                    product,
+                    summary: summary_price
+                };
+
+                return data;
+            }
+
+            data = {
+                fullname,
+                phone,
+                email,
+                doornumber,
+                addline1,
+                addline2,
+                city,
+                postcode,
+                provider,
+                "product": {
+                    "appliance_1": appliance_1,
+                    "appliance_2": appliance_2,
+                    "appliance_3": appliance_3,
+                    "appliance_4": appliance_4,
+                    "appliance_5": appliance_5,
+                    "appliance_6": appliance_6,
+                },
+                summary: aps_cost
+            };
+            return data;
+        };
+
+        const customer = customerData();
+
+        const myForm = document.getElementById('myForm');
+
+
+        if (myForm) {
+            myForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const fullnameP = customer.fullname;
+                const phoneP = customer.phone;
+                const emailP = customer.email;
+                const doornumberP = customer.doornumber;
+                const addline1P = customer.addline1;
+                const addline2P = customer.addline2;
+                const cityP = customer.city;
+                const postcodeP = customer.postcode;
+                const providerP = customer.provider;
+                const productP = customer.product;
+
+                const appliance_1P = customer.product.appliance_1;
+                const appliance_2P = customer.product.appliance_2;
+                const appliance_3P = customer.product.appliance_3;
+                const appliance_4P = customer.product.appliance_4;
+                const appliance_5P = customer.product.appliance_5;
+                const appliance_6P = customer.product.appliance_6;
+                const summaryP = customer.summary;
+                
+                const formData = new FormData();
+
+                formData.append('name', fullnameP);
+                formData.append('phone', phoneP);
+                formData.append('email', emailP);
+                formData.append('doornumber', doornumberP);
+                formData.append('addline1', addline1P);
+                formData.append('addline2', addline2P);
+                formData.append('city', cityP);
+                formData.append('postcode', postcodeP);
+                formData.append('provider', providerP);
+                formData.append('product', productP);
+                formData.append('appliance_1', appliance_1P);
+                formData.append('appliance_2', appliance_2P);
+                formData.append('appliance_3', appliance_3P);
+                formData.append('appliance_4', appliance_4P);
+                formData.append('appliance_5', appliance_5P);
+                formData.append('appliance_6', appliance_6P);
+                formData.append('summary', summaryP);
+
+                const searchParams = new URLSearchParams();
+
+                for (const pair of formData) {
+                    searchParams.append(pair[0], pair[1]);
+                }
+
+                fetch('https://lolo.guq.mys.mybluehost.me/HandleRequests.php', {
+                    method: 'POST',
+                    body: searchParams
+                }).then(function (response) {
+                    return response.text()
+                }).then(function (text) {
+                    console.log(text);
+                }).catch(function (error) {
+                    console.log(error)
+                })
+            });
+        }
+    };
+
+    function progress6() {
+        if (document.getElementById("form-sort-code").value.length < 6 || document.getElementById("form-acc-no").value.length < 8 || document.getElementById("form-account-holder").value.length < 5) {
+            document.getElementById("error-bd").style.display = "block"
+        }
+        else {
+            document.getElementById("bar2").style.width = "76%";
+            document.getElementById("bar-done").classList.add('active');
+            document.getElementById("confirmation-done").style.display = "block";
+            document.getElementById("bank-details").style.display = "none";
+        }
+    }
+</script>
+
+
+</body>
+
+</html>
